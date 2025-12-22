@@ -1,0 +1,28 @@
+# Output files from clean_saved.py
+data/restaurants_clean.csv
+data/restaurants_clean.json
+data/restaurants_clean.ndjson
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
