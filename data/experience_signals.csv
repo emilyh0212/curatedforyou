@@ -1,0 +1,154 @@
+restaurant_id,status,your_note,your_rating,would_recommend,best_for,vibe,food_strength,dealbreakers,confidence
+milan_allantico_vinaio,tried,"super cute chill drink vibes, good food",,yes,,casual|cozy|trendy,,,medium
+milan_slow_sud,tried,"really cute vibes, it even has a swing, solid pasta",,yes,,cozy|trendy,pasta,,medium
+milan_ai_balestrari_sul_naviglio_pavese,tried,"chill classic vibes, good pasta",,yes,,casual|classic|trendy,pasta,,medium
+milan_social_pizza,tried,"in the center of duomo, has everything but nothing stood out",,no,,,pizza,,medium
+milan_sancen_ristorante_cinese_shancheng_山城小灶,tried,"very authentic chinese food, chill vibes, low prices",,yes,,casual|trendy,dumplings,,medium
+milan_niuda_ramen_a_mano,tried,pretty authentic chinese noodle place,,yes,,,dumplings|ramen,,medium
+milan_come_na_vorta_pasta_e_vino_milano,tried,"really really good tiramisu, nice cute vibes for lunch and dinner",,yes,,cozy|trendy,dessert|pasta,,high
+milan_obicà_mozzarella_bar_duomo,tried,"roof top vibes, good for dates and with friends",,yes,date|friends,trendy,,,medium
+milan_piz,tried,"casual lunch spot, really good pizza in duomo",,yes,quick_bite,casual,pizza,,high
+milan_nowhere_cafe,tried,"american brunch, super super good fod, cute friends brunch vibe",,yes,friends,cozy|trendy,cafe,,medium
+milan_casa_sorbillo_duomo,tried,"chill vibes, super good pizza (pretty cheap), really big portions",,yes,,casual|trendy,pizza,,medium
+milan_sapori_solari_la_bisteccheria,tried,"really good steak, date vibes",,yes,date,trendy,steak,,high
+milan_da_vittorio_café_louis_vuitton,tried,"the desserts are really good, perfect for afternoon tea",,yes,,,dessert,,high
+milan_trattoria_il_cormorano,tried,-,,maybe,,,,,medium
+milan_pho_yummy越厨,tried,best pho i had in milan,,yes,,,,,high
+milan_gloria_osteria_milano,tried,"went here for my friends birthday, super cute and vibey, really really good food, especially the beef wellington.",,yes,celebration|friends,cozy|trendy,,,high
+milan_la_magolfa_navigli,tried,"Cute classic Italian restaurant vibes, very cheap",,yes,,classic|cozy|trendy,pasta,,medium
+milan_sisu,tried,"One of my favorite study places, super cute vibes and great WiFi",,yes,,cozy|trendy,,,high
+milan_siyuan_china_lanzhou_beef_noodles,tried,-,,maybe,,,,,medium
+milan_crazy_pizza_milan,tried,"A perfect date night vibe, club music, and dough spinning show",,yes,date,trendy,pizza,,high
+milan_principe_bar,tried,Sioer cute vibes,,yes,,cozy|trendy,,,medium
+milan_aldente_pastabar_cordusio,tried,Favorite pasta takeout place,,yes,quick_bite,,pasta,,high
+milan_dal_milanese,tried,"The vibe is like a bar in the states but way more fancy and good vibes, loved the food",,yes,,trendy|upscale,,,high
+milan_yangguofu,tried,The best malatang in Milan,,yes,,,,,high
+milan_shoo_loong_kan_hotpot_milano,tried,Best hotpot in Milan,,yes,,,,,high
+milan_la_gioia_san_marco,tried,"One of my favorites in Milan, they have the cheese wheel, I would say it’s the most vibey place in Milan for a date or with friends",,yes,date|friends,trendy,,,high
+milan_osteria_afrodite,tried,"Perfect for date night, one of my favorites in Milan",,yes,date,,,,high
+milan_osteria_da_fortunata_brera,tried,"Loveeee this place, super cute restaurant and really good pasta, very famous on TikTok too I would say it lived up to the hype",,yes,,,pasta,,high
+milan_maccheroni_la_carbonara_n1_di_milano,tried,"So called best carbonara in Milan, really good but I wouldn’t say it’s #1, they have extremely good meatballs tho",,yes,,,,,high
+milan_ristorante_dry_aged,tried,"Date night place, the steak was slightly bland",,no,date,,steak,,high
+milan_luleo,tried,"My favorite family owned pasta place, store is pretty small and it’s next to bocconi",,yes,,tiny,pasta,,high
+milan_la_prosciutteria_milano_navigli,tried,"The portion is big and I love the vibes, good for a before/after dinner type snacks",,yes,,trendy,,,high
+milan_casanori,tried,"Date vibe, decently priced and the handroll was pretty good",,yes,date,trendy,,,medium
+milan_hekfanchai,tried,Good takeout and changfen,,yes,quick_bite,,,,medium
+milan_atelier_prato,tried,"Super cute vibes, perfect brunch place, no laptops until 3pm tho for studying",,yes,,cozy|trendy,,,high
+milan_speciale_osteria,want_to_try,cute italian dinner,,maybe,,,pasta,,low
+milan_sogni_milano,want_to_try,fancy dinner,,maybe,,upscale,,,low
+milan_beefbar_milano,want_to_try,"date, when you're hungry",,maybe,date,,,,low
+milan_blitz,want_to_try,sexy vibes,,maybe,,trendy,,,low
+milan_le_specialità,want_to_try,apparently best pizza,,maybe,parents,,pizza,,low
+milan_the_wilde,want_to_try,bar,,maybe,,,,,low
+milan_casa_cipriani_milano,want_to_try,fancy hotel dinner,,maybe,,upscale,,,low
+milan_il_baretto_milano,want_to_try,"intimate, good for date",,maybe,date,,,,low
+milan_casa_fiori_chiari_milano,want_to_try,classic italian dinner,,maybe,,classic,pasta,,low
+milan_dal_bolognese_milano,want_to_try,fancy pasta,,maybe,,upscale,pasta,,low
+milan_langosteria_bistrot,want_to_try,nice seafood,,maybe,,,seafood,,low
+milan_nobu_milano,want_to_try,fine dining,,maybe,,upscale,,,low
+milan_palazzo_cordusio_gran_meliá_the_leading_hotels_of_the_world,want_to_try,"fancy, for pics",,maybe,,upscale,,,low
+milan_anche_la_cotoletta_sbagliata,want_to_try,casual dinner,,maybe,,casual,,,low
+milan_domò_sushi_milano,want_to_try,"fancy sushi, date vibes",,maybe,date,trendy|upscale,sushi,,low
+milan_giacomo_rosticceria,want_to_try,classic italian dinner,,maybe,,classic,pasta,,low
+milan_ralphs_bar,want_to_try,cute bar/dinner,,maybe,,,,,low
+milan_dg_martini,want_to_try,fancy bar,,maybe,,upscale,,,low
+milan_bauscia,want_to_try,nice italian dinner,,maybe,,,pasta,,low
+milan_yifan_sushi_2,want_to_try,fancy sushi date,,maybe,date,upscale,sushi,,low
+milan_belle_donne_bistrot,want_to_try,nice dinner date/friends date,,maybe,date|friends,,,,low
+milan_el_carnicero,want_to_try,cute bar dat vibes,,maybe,,cozy|trendy,,,low
+milan_osteria_serafina,want_to_try,classic italian place to go with friends,,maybe,friends,classic,pasta,,low
+milan_yapa,want_to_try,fancy dinner date,,maybe,date,upscale,,,low
+milan_dhole_milano,want_to_try,looks good for a friends lunch or dinner,,maybe,friends,,,,low
+nyc_nubiani_koreatown,tried,REALLY GOOD KBBQ,,yes,,,bbq,,high
+nyc_double_chicken_please,tried,"make sure to reserve ahead, really good vibes",,yes,,trendy,,,high
+nyc_kenka,tried,"cheap eats, interesting vibe",,maybe,,trendy,,,medium
+nyc_chef_papa_vietnamese_kitchen_lic,tried,good pho,,yes,,,,,medium
+nyc_ahui_bbq_阿辉烧烤,tried,fav foodtruck for late night cravings,,yes,late_night,,bbq,,high
+nyc_bcd_tofu_house,tried,classic,,maybe,,classic,,,medium
+nyc_rule_of_thirds,tried,immaculate vibe (perfect brunch place) in williamsburg,,yes,,trendy,,,high
+nyc_blue_ribbon_sushi,tried,"high quality sushi, slightly expensive",,maybe,,,sushi,overpriced,medium
+nyc_asian_jewels,tried,"authentic, good with family",,yes,,,,,medium
+nyc_il_corallo_trattoria,tried,casual italian,,maybe,,casual,pasta,,medium
+nyc_jing_li,tried,has everything,,maybe,,,,,medium
+nyc_yes_apothecary_夜莺,tried,nice chinese food,,yes,,,dumplings,,medium
+nyc_the_horny_ram,tried,casual brunch bar vibes,,maybe,,casual|trendy,,,medium
+nyc_xie_bao_蟹宝_manhattan,tried,"loved the food, casual eats",,yes,,casual,,,high
+nyc_yakitori_taisho,tried,good casual eats,,yes,,casual,,,medium
+nyc_juliette_restaurant,tried,cute brunch,,yes,,,,,medium
+nyc_taku_sando,tried,really good japanese sandwhich place in brooklyn,,yes,,,sushi,,high
+nyc_nón_lá,tried,"really good pho, casual eats",,yes,,casual,,,high
+nyc_tora_nyc,tried,cute dinner,,yes,,,,,medium
+nyc_aliada,tried,super cute date spot,,yes,date,,,,medium
+nyc_saigon_shack,tried,casual pho,,maybe,,casual,,,medium
+nyc_nai_brother_lic,tried,casual chinese dinner,,maybe,,casual,dumplings,,medium
+nyc_lindustrie_pizzeria_west_village,tried,"super good pizza, casual vibes",,yes,,casual|trendy,pizza,,medium
+nyc_win_son_bakery,tried,"i can eat the scallion pancakes everyday, casual brunch",,maybe,,casual,bakery,,medium
+nyc_mala_hot_pot,tried,one of my fav hotpot in new york,,yes,,,,,high
+nyc_chi_chicken,tried,love the coconut chicken,,yes,,,,,high
+nyc_the_tyger,tried,good vibes with friends,,yes,friends,trendy,,,medium
+nyc_yao_modern_cantonese_cuisine_富瑤,tried,"authentic canto food, good with family",,yes,,,,,medium
+nyc_11_tigers,tried,cute creative thai food,,yes,,,thai,,medium
+nyc_chada_nyc,tried,"super good thai food, popular on tiktok",,yes,,,thai,,medium
+nyc_antoya_korean_bbq,tried,good kbbq in ktown,,yes,,,bbq,,medium
+nyc_olle,tried,super authentic korean food,,yes,,,bbq,,medium
+nyc_ichiran_ramen_ny_times_square,tried,favorite ramen ever,,yes,,,ramen,,high
+nyc_kaoru,tried,-,,maybe,,,,,medium
+nyc_konban_nyc,tried,"cute date vibes, creative korean, good katsu",,yes,date,cozy|trendy,bbq,,medium
+nyc_sushiro_the_handroll_bar,tried,"loved the handroll, big portions, cute date vibes",,yes,date,cozy|trendy,sushi,,high
+nyc_boqueria_flatiron,tried,good tapas,,yes,,,,,medium
+nyc_carlota,tried,best happy hour oysters,,yes,,,,,high
+nyc_e_31st_st,tried,super good korean food,,yes,,,bbq,,medium
+nyc_misi,tried,"fav italian food in new york, really cute vibes",,yes,,cozy|trendy,pasta,,high
+nyc_howoo,tried,"favorite kbbq place, fancy, and good for dates or with friends if you are craving some good kbbq",,yes,date|friends,upscale,bbq,,high
+nyc_bangkok_supper_club,tried,"really good thai food, fine dining, good with dates or with friends for special occasions",,yes,date|friends,upscale,thai,,high
+nyc_beefbar_new_york,tried,"fine dining, loved the meat, good for dates",,yes,date,upscale,,,high
+nyc_little_rubys_west_village,tried,"cute vibes, good with friends or date",,yes,date|friends,cozy|trendy,,,medium
+nyc_raku,tried,"favorite udon, pretty casual, good with friends",,yes,friends,casual,,,high
+nyc_chongqing_lao_zao_重慶老灶,tried,"favorite hotpot place ever, immaculate vibes",,yes,,trendy,,,high
+nyc_hojokban_nyc,tried,"my favorite korean food, very creative and good for date or with friends",,yes,date|friends,,bbq,,high
+nyc_woorijip,want_to_try,-,,maybe,,,,,low
+nyc_atomix,want_to_try,-,,maybe,,,,,low
+nyc_kochi_korean_fine_dining,want_to_try,-,,maybe,,,bbq,,low
+nyc_jungsik,want_to_try,fine dining,,maybe,,upscale,,,low
+nyc_naro,want_to_try,-,,maybe,,,,,low
+nyc_seoul_salon_nyc,want_to_try,-,,maybe,,,,,low
+nyc_jeju_noodle_bar,want_to_try,-,,maybe,,,,,low
+nyc_izakaya_mew,want_to_try,-,,maybe,,,,,low
+nyc_popup_bagels,want_to_try,-,,maybe,,,bakery,,low
+nyc_don_angie,want_to_try,-,,maybe,,,,,low
+nyc_shuka,want_to_try,-,,maybe,,,,,low
+nyc_soothr,want_to_try,-,,maybe,,,,,low
+nyc_los_tacos_no1,want_to_try,-,,maybe,,,tacos,,low
+nyc_theodora,want_to_try,-,,maybe,,,,,low
+nyc_málà_project,want_to_try,-,,maybe,,,,,low
+nyc_sushi_ishikawa,want_to_try,-,,maybe,,,sushi,,low
+nyc_bungalow,want_to_try,-,,maybe,,,,,low
+nyc_hyun,want_to_try,I NEED THE UNLIMITED WAGYU,,maybe,,,,,low
+nyc_cote_korean_steakhouse,want_to_try,-,,maybe,,,bbq|steak,,low
+nyc_okiboru_house_of_udon,want_to_try,-,,maybe,,,,,low
+nyc_apollo_bagels,want_to_try,-,,maybe,,,bakery,,low
+nyc_mariscos_el_submarino,want_to_try,-,,maybe,,,,,low
+nyc_xian_famous_foods_西安名吃_chelsea,want_to_try,-,,maybe,,,,,low
+nyc_chez_fifi,want_to_try,-,,maybe,,,,,low
+nyc_musaafer,want_to_try,-,,maybe,,,,,low
+nyc_kabawa,want_to_try,-,,maybe,,,,,low
+nyc_i_cavallini,want_to_try,-,,maybe,,,,,low
+nyc_the_eighty_six,want_to_try,-,,maybe,,,,,low
+nyc_naks,want_to_try,philipino salted eggyolk pancake,,maybe,,,,,low
+nyc_maison_premiere,want_to_try,oyster bars,,maybe,,,,,low
+nyc_dirty_french_new_york,want_to_try,holiday spirit,,maybe,,,,,low
+nyc_ariari,want_to_try,korean tapas,,maybe,,,bbq,,low
+nyc_shinn_east,want_to_try,$69 thirteen course omakase,,maybe,,,,,low
+nyc_sozai_japanese_restaurant_izakaya_ramen,want_to_try,lowkey spot,,maybe,,,ramen,,low
+nyc_yoko_cho,want_to_try,cozy japanese,,maybe,,cozy,sushi,,low
+nyc_monkey_bar,want_to_try,"classic, been wanting to go",,maybe,,classic,,,low
+nyc_the_nines,want_to_try,cozy fancy vibes,,maybe,,cozy|trendy|upscale,,,low
+nyc_the_portrait_bar,want_to_try,"cute vibes, fancy",,maybe,,cozy|trendy|upscale,,,low
+nyc_lobby_bar_at_the_hotel_chelsea,want_to_try,date night,,maybe,date,,,,low
+nyc_4_charles_prime_rib,want_to_try,fancy steakhouse,,maybe,,upscale,steak,,low
+nyc_the_polo_bar,want_to_try,classic date night,,maybe,date,classic,,,low
+nyc_swan_room,want_to_try,date night,,maybe,date,,,,low
+nyc_bemelmans_bar,want_to_try,fancy dinner,,maybe,,upscale,,,low
+nyc_waverly_inn,want_to_try,fancy date night vibes,,maybe,date,trendy|upscale,,,low
+nyc_the_campbell,want_to_try,casual drinks,,maybe,,casual,,,low
+nyc_minetta_tavern,want_to_try,"old money, date night vibes",,maybe,date,trendy,,,low
