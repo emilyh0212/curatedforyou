@@ -26,3 +26,11 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Cache files
+data/places_details_cache.json
+data/public_vibe_cache.json
