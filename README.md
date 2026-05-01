@@ -93,6 +93,12 @@ A personal restaurant recommendation chatbot that reflects Emily's taste, powere
 
 ### Backend Server
 
+Before the first run, generate the chatbot's working data file from the Google Takeout CSVs:
+```bash
+python scripts/clean_saved.py
+```
+This creates `data/restaurants_clean.json` (gitignored), which `server.py` loads on import.
+
 Start the FastAPI server:
 ```bash
 python server.py
@@ -102,18 +108,23 @@ uvicorn server:app --reload --port 8000
 
 The server exposes:
 - `POST /chat`: Main endpoint for restaurant recommendations
+- `POST /swap`: Swap one restaurant for another using the same query context
 - `GET /health`: Health check endpoint
 
 ### Frontend
 
-Navigate to the frontend directory:
+The React + Vite frontend lives in `frontend/` inside this repo.
+
 ```bash
-cd ../curatedforyouChatbotv2
+cd frontend
+cp .env.example .env.local   # only needed if your backend isn't on http://localhost:8000
 npm install
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:3003/` (or another port if 3003 is in use).
+The frontend will be available at `http://localhost:3000/` (configured in `vite.config.ts`).
+It calls the backend at `VITE_API_URL` (default `http://localhost:8000`). CORS in `server.py`
+already allows ports 3000 and 5173.
 
 ## Example Queries
 

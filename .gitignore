@@ -34,3 +34,11 @@ Thumbs.db
 # Cache files
 data/places_details_cache.json
 data/public_vibe_cache.json
+
+# Frontend
+frontend/node_modules
+frontend/dist
+frontend/build
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local

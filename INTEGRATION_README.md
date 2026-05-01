@@ -5,16 +5,15 @@ This document explains how to run the integrated restaurant recommendation chatb
 ## Project Structure
 
 - **Backend**: Python FastAPI server (`server.py`) that uses the chatbot logic from `scripts/chatbot.py`
-- **Frontend**: React + TypeScript + Vite app in `Restaurant Recommendation Chatbot/` folder
+- **Frontend**: React + TypeScript + Vite app in the `frontend/` folder of this repo
 - **Data**: Restaurant data in `data/restaurants_clean.json`
 
 ## Setup Instructions
 
 ### 1. Backend Setup
 
-1. **Install Python dependencies**:
+1. **Install Python dependencies** (from the repo root):
    ```bash
-   cd /Users/emilyhan/Desktop/curatedforyou
    pip install -r requirements.txt
    ```
 
@@ -28,43 +27,47 @@ This document explains how to run the integrated restaurant recommendation chatb
    ```bash
    uvicorn server:app --reload --port 8000
    ```
-   
+
    The server will run on `http://localhost:8000`
 
 ### 2. Frontend Setup
 
-1. **Navigate to frontend directory**:
+1. **Navigate to frontend directory** (still inside this repo):
    ```bash
-   cd "/Users/emilyhan/Downloads/Restaurant Recommendation Chatbot"
+   cd frontend
    ```
 
-2. **Install dependencies**:
+2. **(Optional) Set the API URL**:
+   ```bash
+   cp .env.example .env.local   # only if your backend isn't on http://localhost:8000
+   ```
+
+3. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Start the development server**:
+4. **Start the development server**:
    ```bash
    npm run dev
    ```
-   
-   The frontend will run on `http://localhost:3000` (or another port if 3000 is taken)
+
+   The frontend will run on `http://localhost:3000` (configured in `vite.config.ts`)
 
 ## Running the Application
 
-1. **Start the backend** (in one terminal):
+1. **Start the backend** (in one terminal, at the repo root):
    ```bash
-   cd /Users/emilyhan/Desktop/curatedforyou
    uvicorn server:app --reload --port 8000
    ```
 
 2. **Start the frontend** (in another terminal):
    ```bash
-   cd "/Users/emilyhan/Downloads/Restaurant Recommendation Chatbot"
+   cd frontend
    npm run dev
    ```
 
-3. **Open your browser** to the frontend URL (usually `http://localhost:3000`)
+3. **Open your browser** to `http://localhost:3000`
 
 ## How It Works
 
@@ -85,6 +88,7 @@ This document explains how to run the integrated restaurant recommendation chatb
 ## API Endpoints
 
 - `POST /chat` - Process chat message and return recommendations
+- `POST /swap` - Swap one restaurant for another using the same query context
 - `GET /health` - Health check endpoint
 
 ## Troubleshooting
