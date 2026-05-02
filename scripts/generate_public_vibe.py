@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Generate "Public vibe" summaries from review snippets using OpenAI LLM.
+Generate "Public vibe" summaries from review snippets using Anthropic Claude.
 
 For each restaurant with review snippets:
-- Call OpenAI to generate ONE sentence summary
+- Call Claude to generate ONE sentence summary
 - Must be grounded only in snippets
 - Max 170 characters
 - Neutral tone, no hype
@@ -18,20 +18,20 @@ import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from dotenv import load_dotenv
-import openai
+import anthropic
 
 # Load environment variables
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
-if not OPENAI_API_KEY:
-    print("ERROR: OPENAI_API_KEY not found in environment.")
-    print("Please create a .env file with: OPENAI_API_KEY=your_key_here")
+if not ANTHROPIC_API_KEY:
+    print("ERROR: ANTHROPIC_API_KEY not found in environment.")
+    print("Please create a .env file with: ANTHROPIC_API_KEY=your_key_here")
     sys.exit(1)
 
-# Initialize OpenAI client
-openai.api_key = OPENAI_API_KEY
+# Initialize Anthropic client
+_anthropic_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 # Cache file for generated vibes
 CACHE_FILE = Path(__file__).parent.parent / 'data' / 'public_vibe_cache.json'
@@ -71,21 +71,26 @@ def is_stale(updated_at_str: str | None, days: int = 30) -> bool:
 
 def generate_public_vibe_llm(snippets: list[str], cache: dict = None, restaurant_id: str = "", max_retries: int = 2) -> str:
     """
-    Generate a one-sentence "Public vibe" summary using OpenAI.
+    Generate a one-sentence "Public vibe" summary using Anthropic Claude.
     Returns the generated summary or empty string on error.
     """
     if not snippets:
         return ""
-    
+
     # Check cache first
     cache_key = restaurant_id or json.dumps(snippets, sort_keys=True)
     if cache and cache_key in cache:
         return cache[cache_key]
-    
+
     # Combine snippets into context
     combined_snippets = '\n'.join([f"- {s}" for s in snippets[:8]])
-    
-    prompt = f"""Generate a ONE sentence summary (max 170 characters) about this restaurant based ONLY on these review snippets.
+
+    system_prompt = (
+        "You are a helpful assistant that generates concise, factual restaurant "
+        "summaries based on review snippets."
+    )
+
+    user_prompt = f"""Generate a ONE sentence summary (max 170 characters) about this restaurant based ONLY on these review snippets.
 
 Requirements:
 - Must be grounded only in the snippets provided
@@ -104,46 +109,44 @@ One sentence summary:"""
     # Retry logic with exponential backoff
     for attempt in range(max_retries):
         try:
-            response = openai.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant that generates concise, factual restaurant summaries based on review snippets."},
-                    {"role": "user", "content": prompt}
-                ],
+            response = _anthropic_client.messages.create(
+                model="claude-sonnet-4-6",
                 max_tokens=100,
-                temperature=0.3
+                system=system_prompt,
+                messages=[{"role": "user", "content": user_prompt}],
             )
-            
-            summary = response.choices[0].message.content.strip()
-            
+
+            summary = response.content[0].text.strip()
+
             # Ensure it ends with punctuation
-            if summary and not summary[-1] in '.!?':
+            if summary and summary[-1] not in '.!?':
                 summary += '.'
-            
+
             # Truncate if too long
             if len(summary) > 170:
                 summary = summary[:167].rsplit(' ', 1)[0] + '...'
-            
+
             # Cache the result
             if cache is not None and restaurant_id:
                 cache[restaurant_id] = summary
-            
+
             return summary
-        
-        except (openai.RateLimitError, openai.APIError) as e:
-            error_code = getattr(e, 'status_code', None) if hasattr(e, 'status_code') else None
-            if error_code == 429 or 'quota' in str(e).lower() or 'rate limit' in str(e).lower():
-                # Quota/rate limit - return empty to trigger fallback
-                return ""
-            if attempt < max_retries - 1:
-                wait_time = (2 ** attempt) * 2
-                time.sleep(wait_time)
-            else:
-                return ""
-        
-        except Exception as e:
+
+        except anthropic.RateLimitError:
+            # Rate-limited — return empty to trigger fallback
             return ""
-    
+
+        except anthropic.APIStatusError as e:
+            if e.status_code == 529:  # Overloaded
+                if attempt < max_retries - 1:
+                    wait_time = (2 ** attempt) * 2
+                    time.sleep(wait_time)
+                    continue
+            return ""
+
+        except Exception:
+            return ""
+
     return ""
 
 
@@ -281,7 +284,7 @@ def main():
     print()
     
     if use_llm:
-        print("✓ OpenAI API key loaded from environment")
+        print("✓ Anthropic API key loaded from environment")
     
     data_dir = Path(__file__).parent.parent / 'data'
     public_signals_file = data_dir / 'public_signals.csv'
@@ -399,7 +402,7 @@ def main():
             print(f"    ✓ LLM: {vibe[:60]}...")
             public_signals[restaurant_id]['public_vibe'] = vibe
             public_signals[restaurant_id]['public_vibe_source'] = 'llm'
-            public_signals[restaurant_id]['public_vibe_model'] = 'gpt-4o-mini'
+            public_signals[restaurant_id]['public_vibe_model'] = 'claude-sonnet-4-6'
             public_signals[restaurant_id]['public_vibe_updated_at'] = datetime.now().isoformat()
         
         # Rate limiting

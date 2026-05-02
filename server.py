@@ -23,6 +23,7 @@ if not GOOGLE_MAPS_API_KEY:
 sys.path.insert(0, str(Path(__file__).parent / 'scripts'))
 from chatbot import RestaurantChatbot
 from rank_and_explain import recommend
+from narrator import narrate_results
 
 app = FastAPI()
 
@@ -246,22 +247,22 @@ async def chat(request: ChatRequest):
         try:
             # Use new ranking system
             ranked_results = recommend(user_message, top_n=6, city=city)
-            
+
             # Load master data to get full restaurant info
             data_dir = Path(__file__).parent / 'data'
             master_file = data_dir / 'restaurants_master.csv'
             restaurant_lookup = {}
-            
+
             import csv
             with open(master_file, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 for row in reader:
                     restaurant_lookup[row['restaurant_id']] = row
-            
+
             # Convert to RestaurantData format
             tried_data = []
             want_data = []
-            
+
             # Load experience signals for debug info
             experience_file = data_dir / 'experience_signals.csv'
             experience_lookup = {}
@@ -270,12 +271,23 @@ async def chat(request: ChatRequest):
                 reader = csv.DictReader(f)
                 for row in reader:
                     experience_lookup[row['restaurant_id']] = row
-            
+
             # Re-score to get components for debug info
             from rank_and_explain import parse_query, score_restaurant, get_query_location
             parsed_query = parse_query(user_message)
             query_location = get_query_location(parsed_query)
-            
+
+            # Enrich ranked results with personal notes for the narrator
+            for result in ranked_results:
+                master_row = restaurant_lookup.get(result['restaurant_id'], {})
+                result['your_note'] = master_row.get('your_note', '')
+
+            # Narrator: rewrite why_picked in Emily's voice (single batched call)
+            try:
+                ranked_results = await narrate_results(ranked_results, user_message)
+            except Exception as _narrator_exc:
+                print(f"Narrator skipped: {_narrator_exc}")
+
             for result in ranked_results:
                 restaurant_id = result['restaurant_id']
                 master_row = restaurant_lookup.get(restaurant_id, {})

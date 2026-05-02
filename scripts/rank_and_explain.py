@@ -546,10 +546,16 @@ def recommend(query: str, top_n: int = 6, city: Optional[str] = None) -> List[Di
     # Override city if provided
     if city:
         parsed_query['city'] = city
-    
+
+    # Hard-filter by city before scoring — ensures Milan restaurants never
+    # appear in NYC queries and vice versa.
+    query_city = parsed_query.get('city')
+    if query_city:
+        restaurants = [r for r in restaurants if r.get('city', '').strip() == query_city]
+
     # Geocode query location for distance scoring
     query_location = get_query_location(parsed_query)
-    
+
     # Score all restaurants
     scored_restaurants = []
     for row in restaurants:
